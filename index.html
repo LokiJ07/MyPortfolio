@@ -18,7 +18,7 @@
 <!-- Navbar -->
    <nav class="fixed w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur shadow z-50" role="navigation">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="font-bold text-xl">MyPortfolio</h1>
+    <h1 class="font-bold text-xl">MyPortfolio | Louie Jay</h1>
 
     <ul class="hidden md:flex gap-6 font-medium">
       <li><a href="#home" class="nav-link hover:text-blue-500 transition">Home</a></li>
@@ -33,19 +33,45 @@
       🌙
     </button>
   </div>
+  <div>
+        <button onclick="toggleMenu()" class="md:hidden max-w-6xl mx-auto px-6 py-4"> 
+        ☰
+      </button>
+    </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu"
+       class="hidden md:hidden bg-white dark:bg-gray-800 px-6 pb-6">
+    <ul class="flex flex-col gap-4 font-medium">
+      <li><a onclick="closeMenu()" href="#home" class="nav-link hover:text-blue-500 transition">Home</a></li>
+      <li><a onclick="closeMenu()" href="#about" class="nav-link hover:text-blue-500 transition">About</a></li>
+      <li><a onclick="closeMenu()" href="#skills" class="nav-link hover:text-blue-500 transition">Skills</a></li>
+      <li><a onclick="closeMenu()" href="#projects" class="nav-link hover:text-blue-500 transition">Projects</a></li>
+      <li><a onclick="closeMenu()" href="#certificates" class="nav-link hover:text-blue-500 transition">Certificates</a></li>
+      <li><a onclick="closeMenu()" href="#contact" class="nav-link hover:text-blue-500 transition">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- Home -->
-<section id="home" class="min-h-screen flex items-center justify-center pt-24">
-  <div class="text-center">
-    <h2 class="text-4xl md:text-5xl font-bold mb-4">
-      Hi, I'm <span class="text-blue-500">Louie Jay</span>
-    </h2>
-    <p class="text-lg mb-6">BSIT Student | Aspiring Web Developer and Programmer</p>
-    <a href="#projects"
-       class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
-      View My Work
-    </a>
+<section id="home" class="min-h-screen flex items-center pt-28">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Profile  -->
+    <div class="flex justify-center md:order-2">
+      <img
+        src="mypics.jpg" alt="Louie Jay profile photo" class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-lg border-4 border-blue-500">
+    </div>
+
+    <!-- COntent -->
+    <div class="text-center md:text-left md:order-1">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        Hi, I'm <span class="text-blue-500">Louie Jay</span>
+      </h2>
+      <p class="text-lg mb-6">BSIT Student | Aspiring Web Developer & Programmer</p>
+      <a href="#projects" class="inline-block px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"> View My Work
+      </a>
+    </div>
   </div>
 </section>
 
@@ -238,6 +264,17 @@ Built using HTML5, Tailwind CSS, and Vanilla JavaScript in a single-page layout.
       }
     });
   });
+
+  //mobile nav script
+    const mobileMenu = document.getElementById("mobileMenu");
+
+  function toggleMenu() {
+    mobileMenu.classList.toggle("hidden");
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.add("hidden");
+  }
 </script>
 
 <!-- Script for the certificates -->
