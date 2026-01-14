@@ -133,6 +133,42 @@ Built using HTML5, Tailwind CSS, and Vanilla JavaScript in a single-page layout.
   </div>
 </section>
 
+<!-- Certificates Section -->
+<section id="certificates" class="py-20 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-5xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-6">Certificates</h3>
+
+    <!-- Card Preview -->
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Single certificate card -->
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-lg transition cursor-pointer"
+           onclick="openModal('cert1')">
+        <h4 class="font-bold text-lg">Web Development Fundamentals</h4>
+        <p class="text-sm mt-2">Issued by FreeCodeCamp</p>
+        <p class="mt-3 text-blue-500 hover:underline">View Certificate</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-lg transition cursor-pointer"
+           onclick="openModal('cert2')">
+        <h4 class="font-bold text-lg">Cyber Hygiene Workshop</h4>
+        <p class="text-sm mt-2">Issued by DevCon</p>
+        <p class="mt-3 text-blue-500 hover:underline">View Certificate</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal Background -->
+<div id="modalBg" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <!-- Modal content -->
+  <div class="bg-white dark:bg-gray-800 rounded-lg max-w-3xl w-full p-6 relative">
+    <button class="absolute top-2 right-3 text-gray-700 dark:text-gray-300 text-xl font-bold" onclick="closeModal()">×</button>
+    <h4 id="modalTitle" class="font-bold text-xl mb-4"></h4>
+    <img id="modalImg" src="" alt="Certificate" class="w-full rounded shadow" />
+  </div>
+</div>
+
+
 <!-- Contact -->
 <section id="contact" class="bg-gray-100 dark:bg-gray-800 py-20">
   <div class="max-w-xl mx-auto px-6 text-center">
@@ -181,6 +217,35 @@ Built using HTML5, Tailwind CSS, and Vanilla JavaScript in a single-page layout.
     });
   });
 </script>
+
+<script>
+  const modalBg = document.getElementById('modalBg');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalImg = document.getElementById('modalImg');
+
+  function openModal(certId) {
+    modalBg.classList.remove('hidden');
+
+    // Change content based on which certificate is clicked
+    if(certId === 'cert1') {
+      modalTitle.textContent = "Web Development Fundamentals";
+      modalImg.src = "certificates/webdev-fundamentals.jpg"; // Replace with your actual image path
+    } else if(certId === 'cert2') {
+      modalTitle.textContent = "Cyber Hygiene Workshop";
+      modalImg.src = "certificates/cyber-hygiene.jpg"; // Replace with your actual image path
+    }
+  }
+
+  function closeModal() {
+    modalBg.classList.add('hidden');
+  }
+
+  // Close modal if clicked outside content
+  modalBg.addEventListener('click', (e) => {
+    if(e.target === modalBg) closeModal();
+  });
+</script>
+
 
 </body>
 </html>
