@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->  
     <link rel="icon" type="image/png" href="iconportfolio.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>My Portfolio | Louie Jay</title>
@@ -16,20 +16,20 @@
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
 
 <!-- Navbar -->
-   <nav class="fixed w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur shadow z-50">
+   <nav class="fixed w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur shadow z-50" role="navigation">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
     <h1 class="font-bold text-xl">MyPortfolio</h1>
 
     <ul class="hidden md:flex gap-6 font-medium">
-      <li><a href="#home" class="hover:text-blue-500 transition">Home</a></li>
-      <li><a href="#about" class="hover:text-blue-500 transition">About</a></li>
-      <li><a href="#skills" class="hover:text-blue-500 transition">Skills</a></li>
-      <li><a href="#projects" class="hover:text-blue-500 transition">Projects</a></li>
-      <li><a href="#contact" class="hover:text-blue-500 transition">Contact</a></li>
+      <li><a href="#home" class="nav-link hover:text-blue-500 transition">Home</a></li>
+      <li><a href="#about" class="nav-link hover:text-blue-500 transition">About</a></li>
+      <li><a href="#skills" class="nav-link hover:text-blue-500 transition">Skills</a></li>
+      <li><a href="#projects" class="nav-link hover:text-blue-500 transition">Projects</a></li>
+      <li><a href="#contact" class="nav-link hover:text-blue-500 transition">Contact</a></li>
     </ul>
 
     <button onclick="toggleDarkMode()" class="px-3 py-1 rounded bg-gray-200 dark:bg-gray-700">
-      🌙
+      DarkMode
     </button>
   </div>
 </nav>
@@ -49,16 +49,20 @@
 </section>
 
 <!-- About Me -->
-<section id="about" class="max-w-5xl mx-auto px-6 py-20">
-  <h3 class="text-3xl font-bold mb-6">About Me</h3>
-  <p class="leading-relaxed">
-    I am a 4th Year BSIT student passionate about web development, system design,
-    and programming. I enjoy building some projects, functional systems using
-    HTML, CSS, JavaScript, PHP, and MySQL. And Some application using Java. I started
-    like programming during in my 1st year Second Sem when I use java and make an 
-    application like, tetris and tic-tac-toe and thats the time I like to code. And
-    now I'm still learning new things now expecially in Web Development.
-  </p>
+<section id="about" aria-labelledby="about-title" class="max-w-5xl mx-auto px-6 py-20">
+  <h3 id="about-title" class="text-3xl font-bold mb-6">About Me</h3>
+<p class="leading-relaxed">
+I am a 4th-year BSIT student passionate about web development, system design, and programming.
+I enjoy building functional systems using HTML, CSS, JavaScript, PHP, and MySQL, as well as
+desktop applications using Java.
+<br> <br>
+My interest in programming started during my first year, second semester, when I developed
+simple games such as Tetris and Tic-Tac-Toe using Java. Since then, I have continued learning
+and improving my skills, particularly in web development.
+</p>
+<p class="mt-4 text-sm text-gray-500">
+Built using HTML5, Tailwind CSS, and Vanilla JavaScript in a single-page layout.
+</p>
 </section>
 
 <!-- Skills -->
@@ -109,7 +113,7 @@
       <p class="text-sm mt-2">* Developed a full-featured nutrition mapping web application as a capstone project.</p>
       <p class="text-sm mt-2">* Gained extensive hands-on experience in full-stack web development and teamwork.</p>
       <br>
-      <a href="https://nutrimap.42web.io/" class="text-blue-500">Website Link</a>
+      <a href="https://nutrimap.42web.io/" class="hover:underline text-blue-500">Website Link</a>
     </div>
 
     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-lg transition">
@@ -117,14 +121,14 @@
       <p class="text-sm mt-2">*Collaborated with a 3rd-year student to develop a web-based customer feedback system.</p>
       <p class="text-sm mt-2">*Strengthened collaboration and version control skills.</p>
       <br>
-      <a href="https://github.com/RyanPCepada/customer_feedback_management_system" class="text-blue-500">Github Link</a>
+      <a href="https://github.com/RyanPCepada/customer_feedback_management_system" class="hover:underline text-blue-500">Github Link</a>
     </div>
 
     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-lg transition">
       <h4 class="font-bold text-lg">KaPeTek CaFe</h4>
       <p class="text-sm mt-2">*Developed a simple e-commerce Web System during in the IT-Fest.</p>
       <br>
-      <a href="https://lokij07.github.io/itfest-website/" class="text-blue-500">Website Link</a>
+      <a href="https://lokij07.github.io/itfest-website/" class="hover:underline text-blue-500">Website Link</a>
     </div>
   </div>
 </section>
@@ -135,7 +139,7 @@
     <h3 class="text-3xl font-bold mb-6">Contact Me</h3>
     <p>Number: <span class="text-blue-500">+639264686830</span></p>
     <p>Email: <span class="text-blue-500">louizkylaspona@gmail.com</span></p>
-    <a href="https://www.facebook.com/louizky07002">Facebook: <span class="text-blue-500">Louie Jay Miñoza Laspoña</span></a>
+    <a href="https://www.facebook.com/louizky07002">Facebook: <span class="hover:underline text-blue-500">Louie Jay Miñoza Laspoña</span></a>
   </div>
 </section>
 
@@ -144,17 +148,21 @@
   <p>© 2026 Louie Jay. All rights reserved.</p>
 </footer>
 
-</body>
-
 <!-- Script -->
-
 <script>
-  // Dark mode toggle
-  function toggleDarkMode() {
-    document.documentElement.classList.toggle('dark');
+  // DarkMode
+  const html = document.documentElement;
+
+  if (localStorage.theme === "dark") {
+    html.classList.add("dark");
   }
 
-  // Active nav highlight
+  function toggleDarkMode() {
+    html.classList.toggle("dark");
+    localStorage.theme = html.classList.contains("dark") ? "dark" : "light";
+  }
+
+  //Navlink
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
 
@@ -174,4 +182,5 @@
   });
 </script>
 
+</body>
 </html>
