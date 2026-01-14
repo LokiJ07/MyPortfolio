@@ -25,6 +25,7 @@
       <li><a href="#about" class="nav-link hover:text-blue-500 transition">About</a></li>
       <li><a href="#skills" class="nav-link hover:text-blue-500 transition">Skills</a></li>
       <li><a href="#projects" class="nav-link hover:text-blue-500 transition">Projects</a></li>
+      <li><a href="#certificates" class="nav-link hover:text-blue-500 transition">Certificates</a></li>
       <li><a href="#contact" class="nav-link hover:text-blue-500 transition">Contact</a></li>
     </ul>
 
@@ -143,15 +144,29 @@ Built using HTML5, Tailwind CSS, and Vanilla JavaScript in a single-page layout.
       <!-- Single certificate card -->
       <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-lg transition cursor-pointer"
            onclick="openModal('cert1')">
-        <h4 class="font-bold text-lg">Web Development Fundamentals</h4>
-        <p class="text-sm mt-2">Issued by FreeCodeCamp</p>
+        <h4 class="font-bold text-lg">Gen AI Application</h4>
+        <p class="text-sm mt-2">Issued by Gen AI Research</p>
         <p class="mt-3 text-blue-500 hover:underline">View Certificate</p>
       </div>
 
       <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-lg transition cursor-pointer"
            onclick="openModal('cert2')">
-        <h4 class="font-bold text-lg">Cyber Hygiene Workshop</h4>
-        <p class="text-sm mt-2">Issued by DevCon</p>
+        <h4 class="font-bold text-lg">Cyber Hygiene Training</h4>
+        <p class="text-sm mt-2">Issued by DevCon Bukidnon</p>
+        <p class="mt-3 text-blue-500 hover:underline">View Certificate</p>
+      </div>
+
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-lg transition cursor-pointer"
+           onclick="openModal('cert3')">
+        <h4 class="font-bold text-lg">Agile Scrum</h4>
+        <p class="text-sm mt-2">Issued by Six Sigma PH</p>
+        <p class="mt-3 text-blue-500 hover:underline">View Certificate</p>
+      </div>
+
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow hover:-translate-y-2 hover:shadow-lg transition cursor-pointer"
+           onclick="openModal('cert4')">
+        <h4 class="font-bold text-lg">Online Training on NVivo</h4>
+        <p class="text-sm mt-2">Issued by NBSC</p>
         <p class="mt-3 text-blue-500 hover:underline">View Certificate</p>
       </div>
     </div>
@@ -159,12 +174,19 @@ Built using HTML5, Tailwind CSS, and Vanilla JavaScript in a single-page layout.
 </section>
 
 <!-- Modal Background -->
-<div id="modalBg" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+<div id="modalBg" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 overflow-auto p-4">
   <!-- Modal content -->
-  <div class="bg-white dark:bg-gray-800 rounded-lg max-w-3xl w-full p-6 relative">
-    <button class="absolute top-2 right-3 text-gray-700 dark:text-gray-300 text-xl font-bold" onclick="closeModal()">×</button>
+  <div class="bg-white dark:bg-gray-800 rounded-lg max-w-3xl w-full p-6 relative shadow-lg flex flex-col">
+    <!-- Close button -->
+    <button class="absolute top-2 right-3 text-gray-700 dark:text-gray-300 text-2xl font-bold" onclick="closeModal()">×</button>
+
+    <!-- Modal Title -->
     <h4 id="modalTitle" class="font-bold text-xl mb-4"></h4>
-    <img id="modalImg" src="" alt="Certificate" class="w-full rounded shadow" />
+
+    <!-- Modal Content (Image scrollable if too big) -->
+    <div class="overflow-auto max-h-[80vh]">
+      <img id="modalImg" src="" alt="Certificate" class="w-full rounded shadow" />
+    </div>
   </div>
 </div>
 
@@ -226,13 +248,19 @@ Built using HTML5, Tailwind CSS, and Vanilla JavaScript in a single-page layout.
   function openModal(certId) {
     modalBg.classList.remove('hidden');
 
-    // Change content based on which certificate is clicked
+    // path for the view certificates
     if(certId === 'cert1') {
       modalTitle.textContent = "Web Development Fundamentals";
-      modalImg.src = "certificates/webdev-fundamentals.jpg"; // Replace with your actual image path
+      modalImg.src = "certificates/Gen AI app Cirt.jpg";
     } else if(certId === 'cert2') {
       modalTitle.textContent = "Cyber Hygiene Workshop";
-      modalImg.src = "certificates/cyber-hygiene.jpg"; // Replace with your actual image path
+      modalImg.src = "certificates/cyber hygiene cirt.jpg";
+    } else if(certId === 'cert3') {
+      modalTitle.textContent = "Cyber Hygiene Workshop";
+      modalImg.src = "certificates/agile scrum cert.png";
+    } else if(certId === 'cert4') {
+      modalTitle.textContent = "cyber hygiene Workshop";
+      modalImg.src = "certificates/nvivo cirt.png";
     }
   }
 
