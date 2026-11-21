@@ -13,6 +13,7 @@
   let lastModalTrigger = null;
 
   const certificates = {
+    award: { title: 'Most Promising Technology Award — NutriMap (INNOHUB 2026)', image: 'certificates/nutrimap-most-promising-technology.webp' },
     genai: { title: 'Generative AI Application', image: 'certificates/Gen AI app Cirt.jpg' },
     cyber: { title: 'Cyber Hygiene Training', image: 'certificates/cyber hygiene cirt.jpg' },
     agile: { title: 'Agile Scrum', image: 'certificates/agile scrum cert.png' },

@@ -23,7 +23,8 @@ for (const [, file] of js.matchAll(/image: '([^']+)'/g)) {
 
 const cards = [...html.matchAll(/class="project-card"/g)];
 assert.equal(cards.length, 9, 'Expected 9 project cards');
-assert.equal([...html.matchAll(/data-certificate=/g)].length, 4, 'Expected four certificate controls');
+assert.equal([...html.matchAll(/data-certificate=/g)].length, 5, 'Expected four training certificates and one award');
+assert(html.includes('certificates/nutrimap-most-promising-technology.webp'), 'NutriMap award evidence must be linked from portfolio');
 assert(!html.includes('cdn.tailwindcss.com'), 'Runtime Tailwind CDN must not be used');
 assert(!/\bonclick=/.test(html), 'Prefer unobtrusive JavaScript over inline handlers');
 
@@ -38,4 +39,4 @@ for (const name of ['NutriMap', 'Tabi-Tabi', 'RiftGuard', 'Echoes of Aether', 'L
   assert(html.includes(name), 'Missing portfolio project: ' + name);
 }
 
-console.log('Portfolio checks passed: 9 projects, 4 certificates, valid local links and accessible markup basics.');
+console.log('Portfolio checks passed: 9 projects, 5 certificates/awards, valid local links and accessible markup basics.');
