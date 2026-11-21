@@ -8,6 +8,7 @@
   const navLinks = [...document.querySelectorAll('.nav-link')];
   const modal = document.getElementById('certificateModal');
   const modalTitle = document.getElementById('certificateTitle');
+  const modalCaption = document.getElementById('certificateCaption');
   const modalImage = document.getElementById('certificateImage');
   const modalClose = document.getElementById('closeCertificate');
   let lastModalTrigger = null;
@@ -70,7 +71,8 @@
     lastModalTrigger = trigger;
     modalTitle.textContent = item.title;
     modalImage.src = item.image;
-    modalImage.alt = 'Certificate for ' + item.title;
+    modalImage.alt = id === 'award' ? 'AI-generated visualization of NutriMap Most Promising Technology Award' : 'Certificate for ' + item.title;
+    modalCaption.hidden = id !== 'award';
     modal.hidden = false;
     document.body.classList.add('dialog-open');
     modalClose.focus();
@@ -80,6 +82,7 @@
     modal.hidden = true;
     document.body.classList.remove('dialog-open');
     modalImage.removeAttribute('src');
+    modalCaption.hidden = true;
     if (lastModalTrigger) lastModalTrigger.focus();
   }
   document.querySelectorAll('[data-certificate]').forEach(button => {
