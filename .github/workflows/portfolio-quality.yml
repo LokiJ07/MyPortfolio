@@ -1,0 +1,27 @@
+name: Portfolio quality
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Check static portfolio
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - name: Check JavaScript syntax
+        run: node --check script.js
+      - name: Verify local assets and content
+        run: node tests/verify.mjs
