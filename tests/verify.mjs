@@ -25,6 +25,11 @@ const cards = [...html.matchAll(/class="project-card"/g)];
 assert.equal(cards.length, 9, 'Expected 9 project cards');
 assert.equal([...html.matchAll(/data-certificate=/g)].length, 5, 'Expected four training certificates and one award');
 assert(html.includes('certificates/nutrimap-most-promising-technology.webp'), 'NutriMap award evidence must be linked from portfolio');
+assert(html.includes('certificates/nutrimap-award-original-photo.webp'), 'Original NutriMap certificate photo should remain accessible');
+assert(html.includes('Most Promising Technology Award · 2026'), 'Hero should mention the award');
+assert(html.includes('Award-winning capstone'), 'NutriMap card should feature award distinction');
+assert(html.includes('AI-generated'), 'Clearly disclose that the enhanced preview is AI-generated');
+assert(js.includes("modalCaption.hidden = id !== 'award'"), 'Award preview must disclose its provenance');
 assert(!html.includes('cdn.tailwindcss.com'), 'Runtime Tailwind CDN must not be used');
 assert(!/\bonclick=/.test(html), 'Prefer unobtrusive JavaScript over inline handlers');
 
