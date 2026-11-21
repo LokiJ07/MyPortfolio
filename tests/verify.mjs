@@ -30,7 +30,7 @@ assert(html.includes('id="experience"'), 'Missing experience and education timel
 assert(html.includes('Most Promising Technology Award'), 'Missing verified capstone award');
 assert.equal([...html.matchAll(/class="feature-card"/g)].length, 3, 'Expected 3 featured projects');
 assert.equal([...html.matchAll(/class="timeline-entry"/g)].length, 3, 'Expected education, award and OJT milestones');
-assert.equal([...html.matchAll(/class="phone-previews"/g)].length, 1, 'Missing screenshots area');
+assert.equal([...html.matchAll(/class="feature-preview phone-previews"/g)].length, 1, 'Missing screenshots area');
 assert(html.includes('LokiTunes/main/assets/screenshots/home.jpg'), 'Missing genuine app home capture');
 assert(html.includes('LokiTunes/main/assets/screenshots/now-playing.jpg'), 'Missing genuine Now Playing capture');
 const resumePath = at('assets/resume/Louie_Jay_Laspona_Resume.pdf');
