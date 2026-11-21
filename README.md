@@ -10,6 +10,9 @@ A clean, responsive portfolio covering my background, technical skills, selected
 
 - Plain HTML, CSS, and JavaScript. No build tooling or UI framework is required to view the site.
 - Nine project cards with descriptions and links; entries include both web systems and Android/desktop work.
+- Three featured case studies: NutriMap, LokiTunes and RiftGuard. Actual device screenshots are shown for LokiTunes, which publishes source captures in its own repository; other projects use clearly marked overviews instead of fabricated screenshots.
+- Experience and education timeline with the 2026 BSIT degree, PNP internship and NutriMap award.
+- A printable one-page PDF resume at `assets/resume/Louie_Jay_Laspona_Resume.pdf`, linked from the hero and timeline.
 - The NutriMap capstone highlights its **Most Promising Technology Award** at INNOHUB 2026 (3rd Northern Mindanao Research and Innovation Summit, April 30, 2026). The portfolio now displays the user-selected **AI-generated cleaned-up visualization** as a preview. The photographed certificate is preserved at `certificates/nutrimap-award-original-photo.webp` and is clearly linked as the authentic documentation; the enhanced visualization must not be mistaken for an official scan or independently verified certificate.
 - System-aware, persistent light/dark mode.
 - Responsive navigation, accessible certificate viewer, reduced-motion support, and keyboard-friendly controls.
