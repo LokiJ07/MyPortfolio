@@ -96,8 +96,19 @@
       else closeMenu();
     }
     if (!modal.hidden && event.key === 'Tab') {
-      event.preventDefault();
-      modalClose.focus();
+      const focusable = [modalClose, ...modal.querySelectorAll('.award-modal-note a[href]')]
+        .filter(element => element.getClientRects().length > 0);
+      const currentIndex = focusable.indexOf(document.activeElement);
+      if (currentIndex === -1) {
+        event.preventDefault();
+        focusable[0].focus();
+      } else if (event.shiftKey && currentIndex === 0) {
+        event.preventDefault();
+        focusable[focusable.length - 1].focus();
+      } else if (!event.shiftKey && currentIndex === focusable.length - 1) {
+        event.preventDefault();
+        focusable[0].focus();
+      }
     }
   });
 
