@@ -266,7 +266,7 @@ img { display: block; max-width: 100%; }
 .award-preview > span:nth-of-type(2) { font-size: 12px; color: var(--muted); font-weight: 650; line-height: 1.6; }
 .feature-preview-note { position: absolute; left: 24px; bottom: 16px; font-size: 10px; color: var(--faint); }
 .phone-previews { background: #101820; flex-direction: row; align-items: flex-start; justify-content: center; gap: 13px; padding: 14px 16px 30px; }
-.phone-previews img { width: min(42%, 137px); max-height: 188px; height: auto; object-fit: contain; border: 3px solid #2a3746; border-radius: 12px; box-shadow: 0 11px 25px #0006; background: #172430; }
+.phone-previews img { width: auto; max-width: 42%; height: 188px; object-fit: contain; border: 3px solid #2a3746; border-radius: 12px; box-shadow: 0 11px 25px #0006; background: #172430; }
 .capture-source { position: absolute; left: 12px; right: 12px; bottom: 7px; text-align: center; font-size: 10px; color: #d0dbe5; }
 .build-preview { background: #192737; color: #fff; }
 .build-preview .visual-overline { color: #a5c7e8; }
