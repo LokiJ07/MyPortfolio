@@ -25,6 +25,20 @@ const cards = [...html.matchAll(/class="project-card"/g)];
 assert.equal(cards.length, 9, 'Expected 9 project cards');
 assert.equal([...html.matchAll(/data-certificate=/g)].length, 5, 'Expected four training certificates and one award');
 assert(html.includes('certificates/nutrimap-most-promising-technology.webp'), 'NutriMap award evidence must be linked from portfolio');
+assert(html.includes('id="featured"'), 'Missing featured work section');
+assert(html.includes('id="experience"'), 'Missing experience and education timeline');
+assert(html.includes('Most Promising Technology Award'), 'Missing verified capstone award');
+assert.equal([...html.matchAll(/class="feature-card"/g)].length, 3, 'Expected 3 featured projects');
+assert.equal([...html.matchAll(/class="timeline-entry"/g)].length, 3, 'Expected education, award and OJT milestones');
+assert.equal([...html.matchAll(/class="feature-preview phone-previews"/g)].length, 1, 'Missing screenshots area');
+assert(html.includes('LokiTunes/main/assets/screenshots/home.jpg'), 'Missing genuine app home capture');
+assert(html.includes('LokiTunes/main/assets/screenshots/now-playing.jpg'), 'Missing genuine Now Playing capture');
+const resumePath = at('assets/resume/Louie_Jay_Laspona_Resume.pdf');
+assert(existsSync(resumePath), 'Resume PDF missing');
+const resume = readFileSync(resumePath);
+assert(resume.subarray(0, 8).toString() === '%PDF-1.4', 'Invalid resume PDF header');
+assert(resume.length > 2500, 'Resume PDF unexpectedly small');
+
 assert(html.includes('certificates/nutrimap-award-original-photo.webp'), 'Original NutriMap certificate photo should remain accessible');
 assert(html.includes('Most Promising Technology Award · 2026'), 'Hero should mention the award');
 assert(html.includes('Award-winning capstone'), 'NutriMap card should feature award distinction');
@@ -44,4 +58,4 @@ for (const name of ['NutriMap', 'Tabi-Tabi', 'RiftGuard', 'Echoes of Aether', 'L
   assert(html.includes(name), 'Missing portfolio project: ' + name);
 }
 
-console.log('Portfolio checks passed: 9 projects, 5 certificates/awards, valid local links and accessible markup basics.');
+console.log('Portfolio checks passed: 9 projects, 3 featured projects, 3 milestones, a resume PDF, and valid local links.');

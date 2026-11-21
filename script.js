@@ -46,7 +46,7 @@
     if (nav.classList.contains('is-open') && !nav.contains(event.target) && !navButton.contains(event.target)) closeMenu();
   });
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 760) closeMenu();
+    if (window.innerWidth > 1050) closeMenu();
   });
 
   if ('IntersectionObserver' in window) {
