@@ -10,9 +10,10 @@ A clean, responsive portfolio covering my background, technical skills, selected
 
 - Plain HTML, CSS, and JavaScript. No build tooling or UI framework is required to view the site.
 - Nine project cards with descriptions and links; entries include both web systems and Android/desktop work.
+- The NutriMap capstone includes its **Most Promising Technology Award** evidence from INNOHUB 2026, the 3rd Northern Mindanao Research and Innovation Summit. The portfolio uses a cropped/light-corrected photograph of the certificate, not AI-recreated text or graphics.
 - System-aware, persistent light/dark mode.
 - Responsive navigation, accessible certificate viewer, reduced-motion support, and keyboard-friendly controls.
-- Original photos and certificate files stay in the repository.
+- Original profile photo, certificate files, and the NutriMap award evidence stay in the repository.
 
 ## Run locally
 
